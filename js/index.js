@@ -57,3 +57,28 @@ window.addEventListener("scroll", function(){
   imgs.style.display = 'none';
 });
 
+//drag
+imgs.addEventListener("drag", function(){
+  imgs.style.width = '50%';
+});
+
+// let p = document.querySelector('p');
+// p.addEventListener("drop", function(){
+//   button.style.width = '100%';
+// });
+
+//select
+
+let p = document.querySelector('p');
+p.addEventListener("select", function(){
+  // p.style.color = 'blue';
+  console.log('you selected a thing');
+});
+
+//dblclick
+
+button.addEventListener("dblclick", function() {
+  button.style.width = '125%';
+});
+
+

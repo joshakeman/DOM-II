@@ -1,12 +1,16 @@
 // Your code goes here
 
 //mouseover
-function myFunction() {
-    button.style.background = 'red';
-  }
+// function myFunction(eventObject) {
+//     button.style.background = 'red';
+//     eventObject.stopPropagation();
+//   }
   
 let button = document.querySelector('.btn');
-button.addEventListener("mouseover", myFunction);
+button.addEventListener("mouseover", function (eventObject) {
+  button.style.background = 'red';
+  eventObject.stopPropagation();
+});
 
 // wheel
 
@@ -77,8 +81,32 @@ p.addEventListener("select", function(){
 
 //dblclick
 
-button.addEventListener("dblclick", function() {
+button.addEventListener("dblclick", function(eventObject) {
   button.style.width = '125%';
+  eventObject.stopPropagation();
+
+});
+
+//nested stuff
+
+let destination = document.querySelector('.destination');
+destination.addEventListener("dblclick", function(){
+  destination.style.background = 'green';
+});
+
+function myFunction3(eventObject) {
+  home.style.background = 'red';
+  eventObject.stopPropagation();
+}
+
+let home = document.querySelector('.home');
+button.addEventListener("mouseover", myFunction3);
+
+//prevent default
+
+let link = document.querySelector('a');
+link.addEventListener('click', function(e) {
+  e.preventDefault();
 });
 
 

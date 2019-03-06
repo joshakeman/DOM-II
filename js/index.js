@@ -9,6 +9,7 @@
 let button = document.querySelector('.btn');
 button.addEventListener("mouseover", function (eventObject) {
   button.style.background = 'red';
+  //This stopPropagation is not working for some reason.
   eventObject.stopPropagation();
 });
 
@@ -109,4 +110,16 @@ link.addEventListener('click', function(e) {
   e.preventDefault();
 });
 
+// let cannon = document.getItemsByClassName('.cannon-pic');
+// let cannonBall = document.querySelector('.cannonball-pic');
+// cannon.addEventListener('click', function(){
+//   // cannonBall.style.display = 'block';
+//   TweenMax.to(cannonBall, 0.5, {x: 100, ease: Bounce.easeOut});
+// });
 
+let cannonButton = document.querySelector('.cannon-btn');
+let cannonBall = document.querySelector('.cannonball-pic');
+cannonButton.addEventListener('click', function(){
+  cannonBall.style.display = 'block';
+  TweenMax.to(cannonBall, 0.5, {x: 2500, ease: Bounce.easeOut});
+});
